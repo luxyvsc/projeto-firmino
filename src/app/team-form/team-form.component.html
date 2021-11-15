@@ -1,0 +1,30 @@
+<div id="all" *ngIf="team">
+  <h2 class="team" id="teamName">{{team.name | uppercase}} - <span id="id">id: </span>{{team.id}}</h2>
+
+  <h3>Team name</h3>
+  <mat-form-field class="full-width" appearance="fill">
+    <label for="team-name"></label>
+    <input  matInput placeholder="Team name" [(ngModel)]="team.name">
+  </mat-form-field><br>
+
+  <h3>Titles</h3>
+  <mat-form-field class="full-width" appearance="fill">
+    <label  for="team-titles"></label><br/>
+    <input matInput id="team-titles"[(ngModel)]="team.champions" placeholder="Team titles"/>
+  </mat-form-field><br>
+
+  <h3>Image</h3>
+  <mat-form-field class="full-width" appearance="fill">
+    <label for="team-image-url"></label><br/>
+    <input matInput id="team-image-url" [(ngModel)]="team.imageUrl" placeholder="Team Image"/>
+  </mat-form-field><br>
+
+
+
+  <button id="default" mat-raised-button color="primary" (click)="onGoBack()">go back</button>
+  <button id="default" mat-raised-button color="primary">save</button>
+</div>
+
+
+
+

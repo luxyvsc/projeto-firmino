@@ -31,8 +31,10 @@
 <section class="content">
   <h1>Times Jogados</h1>
   <ul class="teams">
-    <li *ngFor="let team of teams" (click)="onSelect(team)">
-      <span class="team">{{ team.id }}</span> {{team.name}}
+    <li *ngFor="let team of teams">
+      <a routerLink="/detail/{{ team.id }}">
+        <span class="team">{{ team.id }}</span> {{team.name}}
+      </a>
     </li>
   </ul>
 </section>
