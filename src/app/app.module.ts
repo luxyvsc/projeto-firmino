@@ -8,6 +8,10 @@ import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { InMemoryDataService } from './in-memory-data.service';
+import { HttpClientModule } from '@angular/common/http';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -17,7 +21,7 @@ import { TeamDetailComponent } from './team-detail/team-detail.component';
 import { NewTeamComponent } from './new-team/new-team.component';
 import { TeamFormComponent } from './team-form/team-form.component';
 import { MessagesComponent } from './messages/messages.component';
-import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -40,6 +44,9 @@ import { HttpClientModule } from '@angular/common/http';
     MatSelectModule,
     MatInputModule,
     HttpClientModule,
+    HttpClientInMemoryWebApiModule.forRoot(
+      InMemoryDataService, { dataEncapsulation: false}
+    )
   ],
   providers: [],
   bootstrap: [AppComponent]

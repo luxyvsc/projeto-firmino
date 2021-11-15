@@ -23,21 +23,29 @@
 <section class="home ">
   <div class="text">
     <h3>My Name Is:</h3>
-    <h1>Firmino</h1>
+    <h1 class="center">Firmino</h1>
     <h3 class="color">Jogador De Futebol Brasileiro</h3>
   </div>
 </section>
 
 <section class="content">
   <h1>Times Jogados</h1>
-  <ul class="teams">
-    <li *ngFor="let team of teams">
-      <a routerLink="/detail/{{ team.id }}">
-        <span class="team">{{ team.id }}</span> {{team.name}}
-      </a>
-    </li>
-  </ul>
+  <div class="teams d-flex justify-content-around">
+    <a class="list" *ngFor="let team of teams" routerLink="/detail/{{ team.id }}">
+      <h2>{{ team.name }}</h2>
+      <img src="{{team.imageUrl}}">
+      <p>{{ team.champions }}</p>
+    </a>
+  </div>
 </section>
+
+
+<div class="teams d-flex justify-content-around ">
+  <a class="list"[routerLink]="['/new']">
+    <mat-icon class="add">add_circle_outline</mat-icon>
+  </a>
+</div>
+
 
 <footer>
   <div class="d-flex justify-content-around socialMedia">

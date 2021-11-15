@@ -28,6 +28,14 @@ export class TeamFormComponent implements OnInit {
     this.goBack.emit();
   }
 
-
+  save(): void {
+    if (this.team.id) {
+      this.teamservice.updateTeam(this.team)
+        .subscribe(() => this.teamSaved.emit());
+    } else {
+      this.teamservice.addTeam(this.team)
+          .subscribe(() => this.teamSaved.emit())
+    }
+  }
 
 }

@@ -12,7 +12,7 @@ import { TeamService } from '../team.service';
 })
 export class TeamDetailComponent implements OnInit {
 
-  @Input() team?: Team;
+  @Input() team: Team = {} as Team;
 
   constructor(
     private teamService: TeamService,
@@ -34,6 +34,11 @@ export class TeamDetailComponent implements OnInit {
         .subscribe(team => this.team = team);
   }
 
-
+  save(): void {
+  if (this.team) {
+    this.teamService.updateTeam(this.team)
+      .subscribe(() => this.goBack());
+  }
+  }
 
 }

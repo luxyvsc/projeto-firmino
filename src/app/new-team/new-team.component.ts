@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Team } from '../team';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-new-team',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NewTeamComponent implements OnInit {
 
-  constructor() { }
+  team: Team = {} as Team;
+  constructor(private location: Location) { }
 
   ngOnInit(): void {
+  }
+
+  onGoBack(){
+    this.location.back();
+  }
+  onSaved() {
+    this.location.back();
   }
 
 }

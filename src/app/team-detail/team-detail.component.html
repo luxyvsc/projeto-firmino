@@ -1,9 +1,6 @@
-<div *ngIf="team">
-  <h2>{{ team.name | uppercase }} Details</h2>
-  <div><span>id: </span>{{ team.id }}</div>
-  <div>
-    <label for="team-name">Hero name: </label>
-    <input id="team-name" [(ngModel)]="team.name" placeholder="name">
-  </div>
-</div>
-<button (click)="goBack()">go back</button>
+<app-team-form *ngIf="team"
+[team]="team"
+(herosaved)="save()"
+(goBack)="goBack()">
+
+</app-team-form>
