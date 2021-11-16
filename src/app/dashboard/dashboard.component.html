@@ -2,14 +2,14 @@
   <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
     <div class="container">
 
-      <button class="navbar-toggler" data-toggle="collapse" data-target="#nav-principal">
+      <button class="navbar-toggler" (click)="toggleNav()" data-toggle="collapse" data-target="#nav-principal">
         <span class="navbar-toggler-icon"></span>
       </button>
 
       <div class="collapse navbar-collapse" id="nav-principal">
-          <ul class="navbar-nav link">
+          <ul class="navbar-nav link d-flex ">
             <li class="nav-item">
-              <a class="item active" [routerLink]="['/']">Home</a>
+              <a class="item active " [routerLink]="['/']">Home</a>
             </li>
             <li class="nav-item">
               <a class="item" [routerLink]="['/about']">About</a>
@@ -28,9 +28,9 @@
   </div>
 </section>
 
-<section class="content">
+<section class="container">
   <h1>Times Jogados</h1>
-  <div class="teams d-flex justify-content-around">
+  <div class="teams grid d-flex justify-content-around">
     <a class="list" *ngFor="let team of teams" routerLink="/detail/{{ team.id }}">
       <h2>{{ team.name }}</h2>
       <img src="{{team.imageUrl}}">
@@ -39,13 +39,13 @@
   </div>
 </section>
 
-
-<div class="teams d-flex justify-content-around ">
-  <a class="list"[routerLink]="['/new']">
-    <mat-icon class="add">add_circle_outline</mat-icon>
-  </a>
+<div class="container">
+  <div class="teams d-flex justify-content-around ">
+    <a class="list" [routerLink]="['/new']">
+      <mat-icon class="add">add_circle_outline</mat-icon>
+    </a>
+  </div>
 </div>
-
 
 <footer>
   <div class="d-flex justify-content-around socialMedia">

@@ -20,7 +20,6 @@ import { FormsModule } from '@angular/forms';
 import { TeamDetailComponent } from './team-detail/team-detail.component';
 import { NewTeamComponent } from './new-team/new-team.component';
 import { TeamFormComponent } from './team-form/team-form.component';
-import { MessagesComponent } from './messages/messages.component';
 
 
 @NgModule({
@@ -31,7 +30,6 @@ import { MessagesComponent } from './messages/messages.component';
     TeamDetailComponent,
     NewTeamComponent,
     TeamFormComponent,
-    MessagesComponent
   ],
   imports: [
     BrowserModule,

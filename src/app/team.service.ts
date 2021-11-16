@@ -14,7 +14,6 @@ import { MessageService } from './message.service';
 })
 export class TeamService {
 
-
   private teamsUrl = 'api/teams';
 
   getTeams(): Observable<Team[]> {
@@ -44,7 +43,9 @@ private handleError<T>(operation = 'operation', result?: T) {
   }
 
   /** POST: add a new hero to the server */
+
   addTeam(team: Team): Observable<Team> {
+
     return this.http.post<Team>(this.teamsUrl, team, this.httpOptions).pipe(
       tap((newTeam: Team) => this.log(`added team w/ id=${newTeam.id}`)),
       catchError(this.handleError<Team>('addTeam'))

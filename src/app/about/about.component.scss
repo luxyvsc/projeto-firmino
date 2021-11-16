@@ -15,6 +15,12 @@
   margin: 0 15px 5px 0;
 }
 
+@media (max-width:1000px) {
+  .navbar-nav {
+    flex-direction: row;
+  }
+}
+
 .home {
   width: 100%;
   background: url(https://i0.wp.com/trivela.com.br/wp-content/uploads/2019/09/Firmino-Man%C3%A9-Liverpool.jpg?fit=1920%2C1080&ssl=1) no-repeat center center;
